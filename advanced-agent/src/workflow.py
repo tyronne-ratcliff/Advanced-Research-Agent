@@ -36,7 +36,7 @@ class Workflow:
             url = result.get("url", "")
             scraped = self.firecrawl.scrape_company_pages(url)
             if scraped:
-                all_content + scraped.markdown[:1500] + "\n\n"
+                all_content += scraped.markdown[:1500] + "\n\n"
 
         messages = [
             SystemMessage(content=self.prompts.TOOL_EXTRACTION_SYSTEM),
